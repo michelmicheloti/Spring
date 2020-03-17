@@ -16,24 +16,23 @@ import org.springframework.web.servlet.ModelAndView;
  * productController
  */
 @Controller
-@RequestMapping("/product")
 public class ProductController {
 
     @Autowired
     private ProductService productService;
 
-    @GetMapping("/{cod}")
+    @GetMapping("/produto/{cod}")
     public ModelAndView getProductById(
         @PathVariable ("cod") int cod
     ){
-        ModelAndView mv = new ModelAndView("producById");
+        ModelAndView mv = new ModelAndView("productById");
         Product product = productService.getProductById(cod);
         mv.addObject("product", product);
 
         return mv;
     }
 
-    @GetMapping()
+    @GetMapping("/produtosEmEstoque")
     public ModelAndView getProduct(){
 
         ModelAndView modelView = new ModelAndView("allProduct");
@@ -45,7 +44,7 @@ public class ProductController {
         return modelView;
     }
 
-    @GetMapping()
+    @GetMapping("/produtosValorAcima/{value}")
     public ModelAndView getProductByMoreThanAny(
         @PathVariable("value") double valeu
     ){
@@ -59,7 +58,7 @@ public class ProductController {
         return modelView;
     }
 
-    @GetMapping()
+    @GetMapping("/produtosValorAcima/{value}")
     public ModelAndView getProductByLessThanAny(
         @PathVariable("value") double valeu
     ){
