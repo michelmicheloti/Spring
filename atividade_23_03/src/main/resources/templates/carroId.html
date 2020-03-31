@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Carro por ID</h1>
+    <table>
+        <tr>
+            <td>Cod</td>
+            <td>Nome</td>
+            <td>Cor</td>
+            <td>Dono</td>
+            <td>Preço</td>
+        </tr>
+        <tr>
+            <td th:text = "${carro?.cod}"></td>
+            <td th:text = "${carro?.name}"></td>
+            <td th:text = "${carro?.cor}"></td>
+            <td th:text = "${carro?.dono}"></td>
+            <td th:text = "${carro?.price}"></td>
+        </tr>
+    </table>
+</body>
+</html>
