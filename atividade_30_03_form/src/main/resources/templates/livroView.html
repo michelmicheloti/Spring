@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livro View</title>
+</head>
+<body>
+    <h1>Livro View</h1>
+    <table>
+        <tr>
+            <td>Cod</td>
+            <td>Name</td>
+            <td>Actor</td>
+            <td>Edition</td>
+            <td>Price</td>
+        </tr>
+        <tr>
+            <td th:text = "${livro?.cod}"></td>
+            <td th:text = "${livro?.name}"></td>
+            <td th:text = "${livro?.actor}"></td>
+            <td th:text = "${livro?.edition}"></td>
+            <td th:text = "${livro?.price}"></td>
+        </tr>
+    </table>
+</body>
+</html>
