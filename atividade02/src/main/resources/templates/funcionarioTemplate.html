@@ -6,12 +6,12 @@
     <title>Funcionarios</title>
 </head>
 <body>
-    <form action="@{/salvar}" method="POST">
+    <form th:action="@{/salvar}" method="POST">
             <input type="text" name="Nome" placeholder="Nome do Funcionário"/>
             <input type="text" name="cargo" placeholder="cargo do Funcionário"/>
             <input type="text" name="Setor" placeholder="Setor do Funcionário"/>
-            <input type="number" step="0.01" name="Salário" value="0"/>
-        <input type="submit" value="Salvar"/> 
+            <input type="text" name="Salário"/>
+            <input type="submit" value="Salvar"/> 
     </form>
     <table>
         <tr th:each="func : ${funcionario}">

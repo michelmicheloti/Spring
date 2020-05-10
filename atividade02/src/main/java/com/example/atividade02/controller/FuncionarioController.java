@@ -20,13 +20,12 @@ public class FuncionarioController {
     public ModelAndView getFuncionario(){
         ModelAndView mv = new ModelAndView("funcionarioTemplate");
         mv.addObject("funcionario", servico.getFuncionario());
-
         return mv;
     }
 
     @PostMapping("/salvar")
     public String salvar(@ModelAttribute Funcionario func){
-        servico.salvar(func);
-        return "funcionarioTemplate";
+        servico.Salvar(func);
+        return "redirect:/funcionarios";
     }
 }

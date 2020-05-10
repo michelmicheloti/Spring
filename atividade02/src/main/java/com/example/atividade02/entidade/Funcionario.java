@@ -24,12 +24,10 @@ public class Funcionario implements Serializable{
     private String nome;
     private String cargo;
     private String setor;
-    private String salario;
+    private Double salario;
 
-    @Override
-    public String toString() {
-        return "Funcionario [cargo=" + cargo + ", cod=" + cod + ", nome=" + nome + ", salario=" + salario + ", setor="
-                + setor + "]";
+    public static long getSerialversionuid() {
+        return serialVersionUID;
     }
 
     public int getCod() {
@@ -64,12 +62,18 @@ public class Funcionario implements Serializable{
         this.setor = setor;
     }
 
-    public String getSalario() {
+    public Double getSalario() {
         return salario;
     }
 
-    public void setSalario(String salario) {
+    public void setSalario(Double salario) {
         this.salario = salario;
+    }
+
+    @Override
+    public String toString() {
+        return "Funcionario [cargo=" + cargo + ", cod=" + cod + ", nome=" + nome + ", salario=" + salario + ", setor="
+                + setor + "]";
     }
 
     

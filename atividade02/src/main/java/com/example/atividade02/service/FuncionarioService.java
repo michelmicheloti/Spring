@@ -18,7 +18,7 @@ public class FuncionarioService {
         return repository.findAll();
     }
 
-    public void salvar(Funcionario func){
+    public void Salvar(Funcionario func){
         repository.save(func);
     }
 }
