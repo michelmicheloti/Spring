@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funcionarios</title>
+</head>
+<body>
+    <form action="@{/salvar}" method="POST">
+            <input type="text" name="Nome" placeholder="Nome do Funcionário"/>
+            <input type="text" name="cargo" placeholder="cargo do Funcionário"/>
+            <input type="text" name="Setor" placeholder="Setor do Funcionário"/>
+            <input type="number" step="0.01" name="Salário" value="0"/>
+        <input type="submit" value="Salvar"/> 
+    </form>
+    <table>
+        <tr th:each="func : ${funcionario}">
+            <td th:text="${func.cod}"></td>
+            <td th:text="${func.nome}"></td>
+            <td th:text="${func.cargo}"></td>
+            <td th:text="${func.setor}"></td>
+            <td th:text="${func.salario}"></td>
+        </tr>
+    </table>
+</body>
+</html>
