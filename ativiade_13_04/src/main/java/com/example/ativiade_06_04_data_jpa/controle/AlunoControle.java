@@ -29,6 +29,6 @@ public class AlunoControle {
     public String salvar(@ModelAttribute Aluno aluno){
         servico.Salvar(aluno);
         return "redirect:/alunos"; // redireciona apos salvar para o template de alunos
-                                    // chama o metodo getAlunos acima
+                                    // chama o metodo getAlunos acima..
     }
 }
