@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/ativiade_27_04/src/main/resources/css/table.css" media="screen" />
+    <title>Alunos</title>
+</head>
+<body>
+    <h1>Cadastro de Alunos</h1>
+    <a href="/">Menu</a>
+    <br>
+    <br>
+    <form th:action="@{/salvarAluno}" th:object="${aluno}" method="POST">
+        <label for="">Nome:</label>
+        <input type="text" name="nome" id="" placeholder="Nome do Aluno" required/>
+        
+        <label for="">Cursos:</label>
+        <select th:field="${aluno.curso}" required>
+            <option value="">Escolha o curso</option>
+            <option th:each="curso :${cursos}"
+                    th:value="${curso.id}"
+                    th:text="${curso.nome}">
+            </option>
+        </select>
+
+        <input type="submit" name="Salvar" id=""/>
+    </form>
+    <br><br>
+    <table>
+        <tr>
+            <td>Matricula</td>
+            <td>Nome</td>
+            <td>Curso</td>
+        </tr>
+        <tr th:each="aluno : ${alunos}">
+            <td th:text="${aluno.matricula}"></td>
+            <td th:text="${aluno.nome}"></td>
+            <td th:text="${aluno.curso?.nome}"></td>
+        </tr>
+    </table>
+</body>
+</html>
