@@ -52,5 +52,13 @@ public class Professor implements Serializable {
         return "Professor [codigo=" + codigo + ", nome=" + nome + "]";
     }
 
+    public List<Curso> getCursos() {
+        return cursos;
+    }
+
+    public void setCursos(List<Curso> cursos) {
+        this.cursos = cursos;
+    }
+
     
 }

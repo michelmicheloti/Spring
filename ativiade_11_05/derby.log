@@ -1,6 +1,6 @@
 ----------------------------------------------------------------
-Sun May 17 17:21:17 BRT 2020:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0172-244c-4422-00000f17e490 
+Sun May 17 18:30:54 BRT 2020:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0172-248c-0146-00000ee1b488 
 on database directory C:\Users\miche\github\Spring\ativiade_11_05\dbaluno with class loader sun.misc.Launcher$AppClassLoader@764c12b6 
 Loaded from file:/C:/Users/miche/.m2/repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar
 java.vendor=Oracle Corporation

@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/ativiade_27_04/src/main/resources/css/table.css" media="screen" />
+
+    <style>
+        table, th, td {
+          border: 1px solid black;
+        }
+    </style>
+    
     <title>Cursos</title>
 </head>
 <body>
@@ -17,19 +24,19 @@
         <input type="submit" name="Salvar" />
     </form>
     <br><br>
-        <table>
-            <tr>
-                <td>Id</td>
-                <td>Nome</td>
-                <td>Carga Horaria</td> 
-                <td>Detalhes</td>
-            </tr>
-            <tr th:each="curso : ${cursos}">
-                <td th:text="${curso.id}"></td>
-                <td th:text="${curso.nome}"></td>
-                <td th:text="${curso.cargaHoraria}"></td>
-                <td> <a th:href="@{'/detalhesCurso/' + ${curso.id}}">Detalhes</a></td>
-            </tr>
-        </table>  
+    <table>
+        <tr>
+            <td>Id</td>
+            <td>Nome</td>
+            <td>Carga Horaria</td> 
+            <td>Detalhes</td>
+        </tr>
+        <tr th:each="curso : ${cursos}">
+            <td th:text="${curso.id}"></td>
+            <td th:text="${curso.nome}"></td>
+            <td th:text="${curso.cargaHoraria}"></td>
+            <td> <a th:href="@{'/detalhesCurso/' + ${curso.id}}">Detalhes</a></td>
+        </tr>
+    </table>  
 </body>
 </html>

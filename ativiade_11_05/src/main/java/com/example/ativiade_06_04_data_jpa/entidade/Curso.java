@@ -77,5 +77,13 @@ public class Curso implements Serializable{
     public void setAlunos(List<Aluno> alunos) {
         this.alunos = alunos;
     }
+
+    public List<Professor> getProfessores() {
+        return professores;
+    }
+
+    public void setProfessores(List<Professor> professores) {
+        this.professores = professores;
+    }
     
 }
