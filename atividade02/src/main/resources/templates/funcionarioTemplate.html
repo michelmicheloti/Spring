@@ -10,7 +10,7 @@
             <input type="text" name="Nome" placeholder="Nome do Funcionário"/>
             <input type="text" name="cargo" placeholder="cargo do Funcionário"/>
             <input type="text" name="Setor" placeholder="Setor do Funcionário"/>
-            <input type="text" name="Salário"/>
+            <input type="number" name="Salário" value="0"/>
             <input type="submit" value="Salvar"/> 
     </form>
     <table>
@@ -19,7 +19,7 @@
             <td th:text="${func.nome}"></td>
             <td th:text="${func.cargo}"></td>
             <td th:text="${func.setor}"></td>
-            <td th:text="${func.salario}"></td>
+            <td th:text="${#numbers.formatDecimal(func.salario,2,1)}"></td>
         </tr>
     </table>
 </body>

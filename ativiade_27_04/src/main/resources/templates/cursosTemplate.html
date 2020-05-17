@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/ativiade_27_04/src/main/resources/css/table.css" media="screen" />
+    <title>Cursos</title>
+</head>
+<body>
+    <h1>Cadastro de Cursos</h1>
+    <a href="/">Menu</a>
+    <br>
+    <br>
+    <form th:action="@{/salvarCursos}" method="POST">
+        <input type="text" name="nome" id="" placeholder="Nome do curso"/>
+        <input type="number" name="cargaHoraria" min="1" placeholder="carga horaria" required/>
+        <input type="submit" name="Salvar" id=""/>
+    </form>
+    <br><br>
+        <table>
+            <tr>
+                <td>Id</td>
+                <td>Nome</td>
+                <td>Carga Horaria</td>
+            </tr>
+            <tr th:each="curso : ${cursos}">
+                <td th:text="${curso.id}"></td>
+                <td th:text="${curso.nome}"></td>
+                <td th:text="${curso.cargaHoraria}"></td>
+            </tr>
+        </table>  
+</body>
+</html>
