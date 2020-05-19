@@ -3,6 +3,9 @@ package com.example.atividade3_michelmicheloti_181003.entidade;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 public class Livros implements Serializable{
@@ -12,6 +15,8 @@ public class Livros implements Serializable{
      */
     private static final long serialVersionUID = 1L;
     
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int codigo;
     private String nome;
     private int edicao;
