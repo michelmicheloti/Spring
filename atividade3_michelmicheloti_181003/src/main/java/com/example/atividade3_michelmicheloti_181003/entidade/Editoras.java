@@ -1,11 +1,14 @@
 package com.example.atividade3_michelmicheloti_181003.entidade;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Editoras implements Serializable{
@@ -21,6 +24,10 @@ public class Editoras implements Serializable{
     private String nome;
     private int cnpj;
     private String pais;
+
+    @OneToMany
+    @JoinColumn(name = "ID_EDITORA")
+    private List<Livros> livros;
 
     public int getCodigo() {
         return codigo;
@@ -54,9 +61,18 @@ public class Editoras implements Serializable{
         this.pais = pais;
     }
 
+    public List<Livros> getLivros() {
+        return livros;
+    }
+
+    public void setLivros(List<Livros> livros) {
+        this.livros = livros;
+    }
+
     @Override
     public String toString() {
-        return "Editoras [cnpj=" + cnpj + ", codigo=" + codigo + ", nome=" + nome + ", pais=" + pais + "]";
+        return "Editoras [cnpj=" + cnpj + ", codigo=" + codigo + ", livros=" + livros + ", nome=" + nome + ", pais="
+                + pais + "]";
     }
 
 

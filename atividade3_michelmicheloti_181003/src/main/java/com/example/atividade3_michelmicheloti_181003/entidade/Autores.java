@@ -1,11 +1,16 @@
 package com.example.atividade3_michelmicheloti_181003.entidade;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.UniqueConstraint;
 
 @Entity
 public class Autores implements Serializable{
@@ -21,6 +26,15 @@ public class Autores implements Serializable{
     private String nome;
     private int idade;
     private String nacionalidade;
+
+    @ManyToMany
+    @JoinTable(
+        name="LivroAutores",
+        uniqueConstraints = @UniqueConstraint(columnNames = {"codigo_livro", "codigo_autor"}),
+        joinColumns = @JoinColumn (name = "codigo_autor"),
+        inverseJoinColumns = @JoinColumn(name = "codigo_livro")
+    )
+    private List<Livros> livros;
 
     public int getCodigo() {
         return codigo;
@@ -60,5 +74,11 @@ public class Autores implements Serializable{
                 + "]";
     }
 
-    
+    public List<Livros> getLivros() {
+        return livros;
+    }
+
+    public void setLivros(List<Livros> livros) {
+        this.livros = livros;
+    }
 }
