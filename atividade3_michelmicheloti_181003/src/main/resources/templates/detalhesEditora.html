@@ -4,18 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalhes Editora</title>
-    <style>
-        table,
-        th,
-        td {
-            border: 1px solid black;
-        }
-    </style>
+    <link href="../static/styles/css/menu.css" th:href="@{/styles/css/menu.css}" rel="stylesheet" />
 </head>
 <body>
     <h1>Detalhes Editora</h1>
-    <a href="/">Menu</a>
-    <a href="/editoras">Editoras</a>
+    <div id="menu">
+        <a href="/">Menu /</a>
+        <a href="/editoras">Editoras</a>
+    </div>
+    
     <br>
     <br>
     <b>Codigo Editora: </b> <span th:text="${editora.codigo}"></span><br>
@@ -25,7 +22,7 @@
     <br>
     <br>
     
-    Livros:
+    Livros Associados:
     <table>
         <tr>
             <th>Codigo</th>
@@ -41,5 +38,19 @@
             <td th:text="${livro.genero}"></td>
         </tr>
     </table>
+    <br>
+    <br>
+
+    <form th:action="@{/associarLivroEditora(codigoEditora=${editora.codigo})}" method="POST">
+        <label><b>Livros:</b></label>
+        <select name="codigo" required>
+            <option value="">Escolha o Livros</option>
+            <option th:each="livro : ${livros}"
+                        th:value="${livro.codigo}"
+                        th:text="${livro.nome}">
+            </option>
+        </select>
+        <input type="submit" value="Associar Livro" />
+    </form>
 </body>
 </html>

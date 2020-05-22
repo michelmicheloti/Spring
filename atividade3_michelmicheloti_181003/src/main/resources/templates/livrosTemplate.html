@@ -6,19 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Livros</title>
     
-    <style>
-        table, th, td {
-          border: 1px solid black;
-        }
-    </style>
+    <link href="../static/styles/css/menu.css" th:href="@{/styles/css/menu.css}" rel="stylesheet" />
 
 </head>
 
 <body>
-    <h1>Cadastro de Livros</h1>    
-    <a href="/">Menu</a>
-    <a href="/autores">Autores</a>
-    <a href="/editoras">Editoras</a>
+    <h1>Cadastro de Livros</h1>   
+    <div id="menu">
+        <a href="/">Menu /</a>
+        <a href="/autores">Autores /</a>
+        <a href="/editoras">Editoras</a>
+    </div> 
+    
     <br>
     <br>
     <form th:action="@{/salvarLivro}" th:object="${livro}" method="POST">

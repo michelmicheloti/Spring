@@ -4,18 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalhes Livros</title>
-    <style>
-        table,
-        th,
-        td {
-            border: 1px solid black;
-        }
-    </style>
+    <link href="../static/styles/css/menu.css" th:href="@{/styles/css/menu.css}" rel="stylesheet" />
 </head>
 <body>
     <h1>Detalhes Livros</h1>
-    <a href="/">Menu</a>
+    <div id="menu">
+        <a href="/">Menu /</a>
     <a href="/livros">Livros</a>
+    </div>
+    
     <br>
     <br>
     <b>Codigo livro: </b> <span th:text="${livro.codigo}"></span><br>
