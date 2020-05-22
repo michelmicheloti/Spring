@@ -21,4 +21,8 @@ public class autorServico {
     public void salvar(Autores autores){
         repository.save(autores);
     }
+
+    public Autores getAutoresById(int id){
+        return repository.findById(id).get();
+    }
 }
