@@ -27,7 +27,10 @@ public class AutoresControle {
     @GetMapping("/autores")
     public ModelAndView getProfessores() {
         ModelAndView mv = new ModelAndView("autoresTemplate");
+
+        mv.addObject("autor",  new Autores());
         mv.addObject("autores", autoresServico.getAutores());
+        mv.addObject("livros", livroServico.getLivros());
 
         return mv;
     }
@@ -53,7 +56,7 @@ public class AutoresControle {
     }
 
     @GetMapping("/detalhesAutor/{codigo}")
-    public ModelAndView getCursoDetalhes(@PathVariable(name = "codigo") Integer codigo) {
+    public ModelAndView getAutorDetalhes(@PathVariable(name = "codigo") Integer codigo) {
 
         Autores autor = autoresServico.getAutoresById(codigo);
         ModelAndView mv = new ModelAndView("detalhesAutor");

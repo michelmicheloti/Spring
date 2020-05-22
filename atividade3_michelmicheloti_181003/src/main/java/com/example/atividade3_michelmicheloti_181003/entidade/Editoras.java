@@ -22,7 +22,7 @@ public class Editoras implements Serializable{
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int codigo;
     private String nome;
-    private int cnpj;
+    private String cnpj;
     private String pais;
 
     @OneToMany
@@ -45,11 +45,11 @@ public class Editoras implements Serializable{
         this.nome = nome;
     }
 
-    public int getCnpj() {
+    public String getCnpj() {
         return cnpj;
     }
 
-    public void setCnpj(int cnpj) {
+    public void setCnpj(String cnpj) {
         this.cnpj = cnpj;
     }
 
@@ -71,9 +71,10 @@ public class Editoras implements Serializable{
 
     @Override
     public String toString() {
-        return "Editoras [cnpj=" + cnpj + ", codigo=" + codigo + ", livros=" + livros + ", nome=" + nome + ", pais="
+        return "Editoras [cnpj=" + cnpj + ", codigo=" + codigo + ", nome=" + nome + ", pais="
                 + pais + "]";
     }
 
+    
 
 }

@@ -22,7 +22,7 @@ public class livroServico {
         repository.save(livros);
     }
 
-    public Livros getLivrosById(int id){
-        return repository.findById(id).get();
+    public Livros getLivrosById(int codigo){
+        return repository.findById(codigo).get();
     }
 }

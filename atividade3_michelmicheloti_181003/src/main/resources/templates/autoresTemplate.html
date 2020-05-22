@@ -17,15 +17,27 @@
 <body>
     <h1>Cadastro de Autores</h1>    
     <a href="/">Menu</a>
+    <a href="/livros">Livros</a>
     <br>
     <br>
     <form th:action="@{/salvarAutor}" method="POST">
         <label>Nome:</label>
         <input type="text" placeholder="Digite o nome" name="nome" required/>
         <label>Idade:</label>
-        <input type="text" placeholder="Digite a idade" name="nome" required/>
+        <input type="text" placeholder="Digite a idade" name="idade" required/>
         <label>Nacionalidade:</label>
-        <input type="text" placeholder="Digite a Nacionalidade" name="nome" required/>
+        <input type="text" placeholder="Digite a Nacionalidade" name="nacionalidade" required/>
+
+        <!--label>Livros:</label>
+
+        <select th:field="${autor.livros}" required>
+            <option value="">Escolha o livro</option>
+            <option th:each="livro : ${livros}"
+                        th:value="${livro.codigo}"
+                        th:text="${livro.nome}">
+            </option>
+        </select-->
+
         <input type="submit" value="Salvar" />
     </form>
     <br>

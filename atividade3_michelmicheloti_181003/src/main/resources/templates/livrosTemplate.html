@@ -17,47 +17,43 @@
 <body>
     <h1>Cadastro de Livros</h1>    
     <a href="/">Menu</a>
+    <a href="/autores">Autores</a>
+    <a href="/editoras">Editoras</a>
     <br>
     <br>
-    <form th:action="@{/salvarAluno}" th:object="${aluno}" method="POST">
+    <form th:action="@{/salvarLivro}" th:object="${livro}" method="POST">
         <fieldset>
             <legend>Informações de Cadastro</legend>
             <label>Nome:</label>
             <input type="text" placeholder="Digite o nome" name="nome" required/>
             <label>Edição:</label>
-            <input type="text" placeholder="Digite a edição" name="nome" required/>
+            <input type="text" placeholder="Digite a edição" name="edicao" required/>
             <label>Gênero:</label>
-            <input type="text" placeholder="Digite o gênero" name="nome" required/>
+            <input type="text" placeholder="Digite o gênero" name="genero" required/>
+
+            <input type="submit" value="Salvar" />
         </fieldset>
-        
-        <label>Autore:</label>
-
-        <select th:field="${livros.autores}" required>
-            <option value="">Escolha o curso</option>
-            <option th:each="curso : ${cursos}"
-                        th:value="${curso.id}"
-                        th:text="${curso.nome}">
-            </option>
-        </select>
-
-
-        <input type="submit" value="Salvar" />
     </form>
     <br>
     <br>
     <table>
         <tr>
-            <th>Matricula</th>
+            <th>Código</th>
             <th>Nome</th>
-            <th>Curso</th>
+            <th>Edição</th>
+            <th>Gênero</th>
         </tr>
        
-        <tr th:each="aluno : ${alunos}">
-            <td th:text="${aluno.matricula}"></td>
-            <td th:text="${aluno.nome}"></td>
-            <td th:text="${aluno.curso?.nome}"></td>
+        <tr th:each="livro : ${livros}">
+            <td th:text="${livro.codigo}"></td>
+            <td th:text="${livro.nome}"></td>
+            <td th:text="${livro.edicao}"></td>
+            <td th:text="${livro.genero}"></td>
+            <!--td> <a th:href="@{'/detalhesLivro/' + ${livro.codigo}}">Detalhes</a></td-->
         </tr>
     </table>
+    <br>
+    <br>
 </body>
 
 </html>

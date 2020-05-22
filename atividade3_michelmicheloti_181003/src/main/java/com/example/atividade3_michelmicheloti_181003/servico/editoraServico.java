@@ -21,4 +21,8 @@ public class editoraServico {
     public void salvar(Editoras editoras){
         repository.save(editoras);
     }
+
+    public Editoras getEditorasById(int codigo){
+        return repository.findById(codigo).get();
+    }
 }

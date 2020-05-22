@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -19,6 +20,16 @@ public class EditoraControle {
     public ModelAndView getEditoras(){
         ModelAndView mv = new ModelAndView("editorasTemplate");
         mv.addObject("editoras", editoraServico.getEditoras());        
+        return mv;
+    }
+
+    @GetMapping("/detalhesEditora/{codigo}")
+    public ModelAndView getEditoraDetalhes(@PathVariable(name = "codigo") Integer codigo) {
+        
+        Editoras editora = editoraServico.getEditorasById(codigo);
+        ModelAndView mv = new ModelAndView("detalhesEditora");
+        mv.addObject("editora", editora);
+
         return mv;
     }
 

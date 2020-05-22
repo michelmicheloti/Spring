@@ -18,17 +18,16 @@ public class LivroControle {
     private livroServico servico;
 
     @GetMapping("/livros")
-    public ModelAndView getCursos() {
-        ModelAndView mv = new ModelAndView("cursosTemplate");
+    public ModelAndView getLivros() {
+        ModelAndView mv = new ModelAndView("livrosTemplate");
         mv.addObject("livros", servico.getLivros());
-
         return mv;
     }
 
-    @GetMapping("/detalhesLivro/{id}")
-    public ModelAndView getCursoDetalhes(@PathVariable(name = "id") Integer id) {
+    @GetMapping("/detalhesLivro/{codigo}")
+    public ModelAndView getLivrosDetalhes(@PathVariable(name = "codigo") Integer codigo) {
         
-        Livros livros = servico.getLivrosById(id);
+        Livros livros = servico.getLivrosById(codigo);
         ModelAndView mv = new ModelAndView("detalhesLivro");
         mv.addObject("livro", livros);
 

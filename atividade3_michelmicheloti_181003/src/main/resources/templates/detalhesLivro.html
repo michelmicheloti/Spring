@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes Livros</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Detalhes Livros</h1>
+    <a href="/">Menu</a>
+    <a href="/livros">Livros</a>
+    <br>
+    <br>
+    <b>Codigo livro: </b> <span th:text="${livro.codigo}"></span><br>
+    <b>Nome: </b> <span th:text="${livro.nome}"></span><br>
+    <b>Edição: </b> <span th:text="${livro.edicao}"></span><br>
+    <b>Gênero	: </b> <span th:text="${livro.genero}"></span><br>
+    <br>
+    <br>
+</body>
+</html>
