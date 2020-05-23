@@ -25,4 +25,8 @@ public class autorServico {
     public Autores getAutoresById(int id){
         return repository.findById(id).get();
     }
+
+    public void remover(Autores autores){
+        repository.delete(autores);
+    }
 }

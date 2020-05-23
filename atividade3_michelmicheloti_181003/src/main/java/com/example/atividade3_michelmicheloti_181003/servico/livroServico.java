@@ -25,4 +25,8 @@ public class livroServico {
     public Livros getLivrosById(int codigo){
         return repository.findById(codigo).get();
     }
+
+    public void remover(Livros livros){
+        repository.delete(livros);
+    }
 }

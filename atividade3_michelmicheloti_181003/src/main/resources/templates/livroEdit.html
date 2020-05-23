@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livro</title>
+    <link href="../static/styles/css/menu.css" th:href="@{/styles/css/menu.css}" rel="stylesheet" />
+    
+
+</head>
+
+<body>
+    <h1>Editar Livro</h1>    
+    <a href="/">Menu /</a>
+    <a href="/livros">Voltar</a>
+    <br>
+    <br>
+    <form th:action="@{/salvarLivro}" th:object="${livro}" method="POST" id="formLivro">
+      
+        <label>Código:</label> <span th:text="${livro.codigo}"></span>
+        <br>
+        <input type="hidden" th:value="${livro.codigo}" th:field="${livro.codigo}" name="codigo" />
+      
+        <label>Nome:</label>
+        <input type="text" placeholder="Digite o nome" th:value="${livro.nome}" name="nome" required/>
+        <br>  
+
+        <label>Edição:</label>
+        <input type="text" placeholder="Digite o edicao" th:value="${livro.edicao}" name="edicao" required/>
+        <br>  
+
+        <label>Gênero:</label>
+        <input type="text" placeholder="Digite o genero" th:value="${livro.genero}" name="genero" required/>
+        <br>  
+
+        <label>Autor:</label>
+        <select th:field="${livro.autores}" required>
+            <option value="">Escolha o curso</option>
+            <option th:each="autor : ${autores}"
+                        th:value="${autor.codigo}"
+                        th:text="${autor.nome}">
+            </option>
+        </select>
+
+        <br>
+        <br>
+        <input type="submit" value="Salvar" />
+        <input type="reset"  value="Cancelar"/>
+    </form>
+    
+</body>
+
+</html>

@@ -67,4 +67,26 @@ public class AutoresControle {
 
         return mv;
     }
+
+    @GetMapping("/removerAutor")
+    public String removerAutor(@RequestParam Integer codigo){
+        
+        Autores autor = autoresServico.getAutoresById(codigo);
+        autoresServico.remover(autor);
+
+        return "redirect:/autores";
+    }
+
+    @GetMapping("/editarAutor")
+    public ModelAndView editarAutor(@RequestParam Integer codigo){
+        
+        ModelAndView mv = new ModelAndView("autorEdit");
+    
+        Autores autor = autoresServico.getAutoresById(codigo);
+        mv.addObject("autor",  autor);
+        mv.addObject("livros", livroServico.getLivros());
+
+        return mv;
+   
+    }
 }

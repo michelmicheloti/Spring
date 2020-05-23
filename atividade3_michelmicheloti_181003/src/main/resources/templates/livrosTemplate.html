@@ -41,6 +41,8 @@
             <th>Nome</th>
             <th>Edição</th>
             <th>Gênero</th>
+            <th>Editar</th>
+            <th>Remover</th>
         </tr>
        
         <tr th:each="livro : ${livros}">
@@ -49,6 +51,9 @@
             <td th:text="${livro.edicao}"></td>
             <td th:text="${livro.genero}"></td>
             <!--td> <a th:href="@{'/detalhesLivro/' + ${livro.codigo}}">Detalhes</a></td-->
+            <td> <a th:href="@{'/editarLivro?codigo=' + ${livro.codigo}}">Editar</a></td>
+            <td> <a th:href="@{'/removerLivro?codigo=' + ${livro.codigo}}">Remover</a></td>
+            
         </tr>
     </table>
     <br>

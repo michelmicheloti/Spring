@@ -8,7 +8,6 @@ import com.example.atividade3_michelmicheloti_181003.servico.editoraServico;
 import com.example.atividade3_michelmicheloti_181003.servico.livroServico;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jca.cci.object.EisOperation;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autores</title>
+    
+    <style>
+        table, th, td {
+          border: 1px solid black;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Editar Autores</h1>    
+    <a href="/">Menu /</a>
+    <a href="/autores">Voltar</a>
+    <br>
+    <br>
+    <form th:action="@{/salvarAutor}" th:object="${autor}" method="POST" id="formAutor">
+      
+        <label>Código:</label> <span th:text="${autor.codigo}"></span>
+        <br>
+        <input type="hidden" th:value="${autor.codigo}" th:field="${autor.codigo}" name="codigo" />
+      
+        <label>Nome:</label>
+        <input type="text" placeholder="Digite o nome" th:value="${autor.nome}" name="nome" required/>
+        <br>  
+
+        <label>Idade:</label>
+        <input type="text" placeholder="Digite o idade" th:value="${autor.idade}" name="idade" required/>
+        <br>  
+
+        <label>Nacionalidade:</label>
+        <input type="text" placeholder="Digite o nacionalidade" th:value="${autor.nacionalidade}" name="nacionalidade" required/>
+        <br>  
+
+        <label>Livros:</label>
+        <select th:field="${autor.livros}" required>
+            <option value="">Escolha o livro</option>
+            <option th:each="livro : ${livros}"
+                        th:value="${livro.codigo}"
+                        th:text="${livro.nome}">
+            </option>
+        </select>
+        <br>
+        <br>
+        <input type="submit" value="Salvar" />
+        <input type="reset"  value="Cancelar"/>
+    </form>
+    
+</body>
+
+</html>
