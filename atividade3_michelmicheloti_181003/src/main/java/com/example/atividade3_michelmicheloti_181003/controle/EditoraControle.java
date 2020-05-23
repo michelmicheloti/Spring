@@ -8,6 +8,7 @@ import com.example.atividade3_michelmicheloti_181003.servico.editoraServico;
 import com.example.atividade3_michelmicheloti_181003.servico.livroServico;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jca.cci.object.EisOperation;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -68,5 +69,26 @@ public class EditoraControle {
         mv.addObject("livros", livrosNaoAssociados);
 
         return mv;
+    }
+
+    @GetMapping("/removerEditora")
+    public String removerEditora(@RequestParam Integer codigo){
+        
+        Editoras editora = editoraServico.getEditorasById(codigo);
+        editoraServico.remover(editora);
+
+        return "redirect:/editoras";
+    }
+
+    @GetMapping("/editarEditora")
+    public ModelAndView editarEditora(@RequestParam Integer codigo){
+        
+        ModelAndView mv = new ModelAndView("editoraEdit");
+    
+        Editoras editoras = editoraServico.getEditorasById(codigo);
+        mv.addObject("editora",  editoras);
+
+        return mv;
+   
     }
 }

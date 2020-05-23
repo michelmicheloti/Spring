@@ -41,6 +41,8 @@
             <th>Idade</th>
             <th>País</th>
             <th>Detalhes</th>
+            <th>Editar</th>
+            <th>Remover</th>
         </tr>
        
         <tr th:each="editora : ${editoras}">
@@ -49,6 +51,8 @@
             <td th:text="${editora.cnpj}"></td>
             <td th:text="${editora.pais}"></td>
             <td> <a th:href="@{'/detalhesEditora/' + ${editora.codigo}}">Detalhes</a></td>
+            <td> <a th:href="@{'/editarEditora?codigo=' + ${editora.codigo}}">Editar</a></td>
+            <td> <a th:href="@{'/removerEditora?codigo=' + ${editora.codigo}}">Remover</a></td>
         </tr>
     </table>
 </body>

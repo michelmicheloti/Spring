@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editora</title>
+    <link href="../static/styles/css/menu.css" th:href="@{/styles/css/menu.css}" rel="stylesheet" />
+
+</head>
+
+<body>
+    <h1>Editar Editora</h1>    
+    <a href="/">Menu /</a>
+    <a href="/editoras">Voltar</a>
+    <br>
+    <br>
+    <form th:action="@{/salvarEditoras}" th:object="${eitora}" method="POST" id="formEditora">
+      
+        <label>Código:</label> <span th:text="${editora.codigo}"></span>
+        <br>
+        <input type="hidden" th:value="${editora.codigo}" th:field="${editora.codigo}" name="codigo" />
+      
+        <label>Nome:</label>
+        <input type="text" placeholder="Digite o nome" th:value="${editora.nome}" name="nome" required/>
+        <br>  
+
+        <label>CNPJ:</label>
+        <input type="text" placeholder="Digite o cnpj" th:value="${editora.cnpj}" name="cnpj" required/>
+        <br>  
+
+        <label>País:</label>
+        <input type="text" placeholder="Digite o país" th:value="${editora.pais}" name="pais" required/>
+        <br> 
+
+        <br>
+        <br>
+        <input type="submit" value="Salvar" />
+        <input type="reset"  value="Cancelar"/>
+    </form>
+    
+</body>
+
+</html>
